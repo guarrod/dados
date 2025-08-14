@@ -41,12 +41,12 @@ const faceRotations = [
 function createDice() {
     const dice = new THREE.Group();
     const boxGeometry = new RoundedBoxGeometry(1, 1, 1, 2, 0.1);
-    const boxMaterial = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.1, metalness: 0.9 });
+    const boxMaterial = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.7, metalness: 0.1 });
     const boxMesh = new THREE.Mesh(boxGeometry, boxMaterial);
     dice.add(boxMesh);
 
     const pipGeometry = new THREE.CylinderGeometry(0.06, 0.06, 0.02, 16);
-    const pipMaterial = new THREE.MeshStandardMaterial({ color: 0x333333, roughness: 0.9, metalness: 0.1 });
+    const pipMaterial = new THREE.MeshStandardMaterial({ color: 0x000000, roughness: 0.9, metalness: 0.1 });
 
     const faceNormals = [
         new THREE.Vector3(0, 0, 1),  // 1 (front)
@@ -124,7 +124,7 @@ function processAnimationQueue() {
     const startRotation = new THREE.Quaternion().copy(dice.quaternion);
     const endRotation = new THREE.Quaternion().setFromEuler(new THREE.Euler(targetRotation.x, targetRotation.y, targetRotation.z));
 
-    let duration = 800;
+    let duration = 500;
     let startTime = null;
 
     function animateStep(timestamp) {
