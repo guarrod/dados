@@ -144,9 +144,17 @@ function processAnimationQueue() {
 }
 
 
+let rollCount = 0;
+const rollSequence = [
+    [1, 2],
+    [3, 3],
+    [4, 5],
+    [6, 4]
+];
+
 document.getElementById('rollButton').addEventListener('click', () => {
-    const result1 = Math.floor(Math.random() * 6) + 1;
-    const result2 = Math.floor(Math.random() * 6) + 1;
+    const [result1, result2] = rollSequence[rollCount % rollSequence.length];
+    rollCount++;
 
     document.getElementById('result').innerText = `Dado 1: ${result1}, Dado 2: ${result2}`;
 
