@@ -124,7 +124,7 @@ function processAnimationQueue() {
     const startRotation = new THREE.Quaternion().copy(dice.quaternion);
     const endRotation = new THREE.Quaternion().setFromEuler(new THREE.Euler(targetRotation.x, targetRotation.y, targetRotation.z));
 
-    let duration = 500;
+    let duration = 300;
     let startTime = null;
 
     function animateStep(timestamp) {
